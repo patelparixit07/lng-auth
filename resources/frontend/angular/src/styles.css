@@ -1,0 +1,48 @@
+/* You can add global styles to this file, and also import other style files */
+@import '~bootstrap/dist/css/bootstrap.min.css';
+
+.text-red {
+	color: red;
+}
+
+.mt-20 {
+	margin-top: 20px;
+}
+
+.mt-rem-10 {
+	margin-top: 10rem;
+}
+
+.mt-rem-5 {
+	margin-top: 5rem;
+}
+
+.mr-10 {
+	margin-right: 10px;
+}
+
+.pl-10 {
+	padding-left: 10px;
+}
+
+.error {
+	color: red;
+	font-style: italic;
+}
+
+.success {
+	color: green;
+	font-style: italic;
+}
+
+.user-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border: 5px dotted #6a6a6a;
+    border-radius: 5
+}

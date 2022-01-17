@@ -1,0 +1,14 @@
+<nav class="navbar navbar-expand navbar-dark bg-dark">
+    <a class='navbar-brand pl-10' routerLink="/dashboard">{{pageTitle}}</a>
+    <div class="collapse navbar-collapse">
+        <ul class="navbar-nav mr-auto">
+            <li><a class="nav-link" routerLink="/profile" *ngIf="isLoggedIn">User Profile</a></li>
+            <li><a class='nav-link' *ngIf="!isLoggedIn" routerLink='/login'>Login</a></li>
+            <li><a class='nav-link' *ngIf="!isLoggedIn" routerLink='/register'>Register</a></li>
+        </ul>
+    </div>
+    <button class="btn btn-outline-light btn-dark float-right mr-10" (click)="logout()" *ngIf="isLoggedIn">Logout</button>
+</nav>
+<div class='container mt-20'>
+    <router-outlet></router-outlet>
+</div>
