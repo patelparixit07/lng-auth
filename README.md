@@ -16,6 +16,7 @@ Simple demo application with some basic authentication functionalities.. *regist
 git clone git@github.com:patelparixit07/lng-auth.git
 ```
 - Install the required packages for Laravel. ```composer install```
+- Rename ```.env.example``` to ```.env``` and configure db and url
 - Enter inside the Anuglar folder and Install the required packages for Angular.
  ```
  cd resources/frontend/angular
@@ -24,15 +25,12 @@ git clone git@github.com:patelparixit07/lng-auth.git
 - Start web server ```php artisan serve```
 - Browse url: ```http://localhost:8000```
 
-## Configuration
-- Configure API Endpoint. by updating enviornment variable ```apiUrl``` in file ```enviornments/enviornment.ts``` & ```enviornments/enviornment.prod.ts```
-
-> ***Default:*** http://localhost:8000
-
 
 ### *For Development:* 
 
 - To make changes in angular code, jump to folder ```resources/frontend/angular```
+- Configure API Endpoint. by updating enviornment variable ```apiUrl``` in file ```enviornments/enviornment.ts``` & ```enviornments/enviornment.prod.ts```
+> ***Default:*** http://localhost:8000
 - Serve angular app ```npm start```
 - Serve laravel app ```php artisan serve```
 - Browse url: ```http://localhost:4200/assets/angular```
