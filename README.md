@@ -17,6 +17,7 @@ git clone git@github.com:patelparixit07/lng-auth.git
 ```
 - Install the required packages for Laravel. ```composer install```
 - Rename ```.env.example``` to ```.env``` and configure db and url
+- Run Migration ```php artisan migrate```
 - Enter inside the Anuglar folder and Install the required packages for Angular.
  ```
  cd resources/frontend/angular
