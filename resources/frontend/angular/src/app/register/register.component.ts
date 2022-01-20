@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormBuilder } from '@angular/forms';
+import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { AuthService } from '../shared/auth.service';
 import { JwtService } from '../shared/jwt.service';
@@ -22,10 +22,10 @@ export class RegisterComponent implements OnInit {
 	constructor(private fb: FormBuilder, private authService:AuthService, 
 		private jwtService:JwtService, private router:Router) {
 		this.registerForm = this.fb.group({
-			name: '',
-			email: '',
-			password: '',
-			password_confirmation: ''
+			name: ['', [Validators.required, Validators.maxLength(50)]],
+			email: ['', [Validators.required, Validators.email]],
+			password: ['',[Validators.required, Validators.pattern('(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[$@$!%*?&])[A-Za-z\d$@$!%*?&].{8,}')]],
+			password_confirmation: ['']
 	    });
 	}
 

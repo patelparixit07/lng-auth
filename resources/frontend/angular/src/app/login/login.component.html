@@ -12,12 +12,28 @@
                     <div class="form-outline form-white mb-4">
                         <input type="email" class="form-control form-control-lg" formControlName="email" placeholder="Email">
                         <label class="error" *ngIf="errors.email">{{ errors?.email }}</label>
+                        <span class="error" *ngIf="loginForm.get('email')?.touched && loginForm.get('email')?.invalid">
+                            <span *ngIf="loginForm.get('email')?.errors?.['required']">
+                                The Email field is required.
+                            </span>
+                            <span *ngIf="loginForm.get('email')?.errors?.['email']">
+                                Enter a valid email
+                            </span>
+                        </span>
                     </div>
                     <div class="form-outline form-white mb-4">
                         <input type="password" class="form-control form-control-lg" placeholder="Password" formControlName="password">
                         <label class="error" *ngIf="errors.password">{{ errors?.password }}</label>
+                        <span class="error" *ngIf="loginForm.get('password')?.touched && loginForm.get('password')?.invalid">
+                            <span *ngIf="loginForm.get('password')?.errors?.['required']">
+                                The Password field is required.
+                            </span>
+                            <span *ngIf="loginForm.get('password')?.errors?.['minlength']">
+                                The Password must be at least 8 character long.
+                            </span>
+                        </span>
                     </div>
-                    <button type="submit" class="btn btn-outline-light btn-lg px-5">Submit</button>
+                    <button type="submit" class="btn btn-outline-light btn-lg px-5" [disabled]="loginForm.invalid">Submit</button>
                     </form>
                 </div>
                 <div>

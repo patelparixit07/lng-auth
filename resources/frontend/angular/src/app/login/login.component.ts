@@ -1,5 +1,5 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
-import { FormGroup, FormBuilder } from '@angular/forms'
+import { FormGroup, FormBuilder, Validators } from '@angular/forms'
 import { Router } from '@angular/router';
 import { AuthService } from '../shared/auth.service';
 import { JwtService } from '../shared/jwt.service';
@@ -23,9 +23,10 @@ export class LoginComponent implements OnInit, OnDestroy {
     constructor(private fb: FormBuilder, private authService:AuthService, 
     private router: Router, private jwtService: JwtService ) {
         this.loginForm = this.fb.group({
-            email: '',
-            password: ''
+            email: ['', [Validators.required, Validators.email]],
+            password: ['',[Validators.required, Validators.minLength(8)]]
         });
+        console.log(this.loginForm);
     }
 
     ngOnInit(): void {
